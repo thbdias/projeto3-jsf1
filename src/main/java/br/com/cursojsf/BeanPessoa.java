@@ -8,8 +8,23 @@ public class BeanPessoa {
 	//atributos que serão recebidos da tela
 	private String nome;
 	private String sobrenome;
-
+	private String nomeCompleto;
 	
+	
+
+	public String mostrarNome() {
+		nomeCompleto = nome + " - " + sobrenome;
+		return "";
+	}
+	
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+
 	public String getNome() {
 		return nome;
 	}
