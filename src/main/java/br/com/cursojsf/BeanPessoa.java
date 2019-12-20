@@ -8,19 +8,30 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.component.html.HtmlCommandButton;
 
 //@RequestScoped 
-//@ViewScoped
+@ViewScoped
 //@SessionScoped
-@ApplicationScoped
+//@ApplicationScoped
 @ManagedBean(name = "beanPessoa")
 public class BeanPessoa {
 
 	private String nome;	
 	private List<String> nomes = new ArrayList<String>();
+	private HtmlCommandButton commandButton;
 	
 	
 	
+	
+	public HtmlCommandButton getCommandButton() {
+		return commandButton;
+	}
+
+	public void setCommandButton(HtmlCommandButton commandButton) {
+		this.commandButton = commandButton;
+	}
+
 	public void setNomes(List<String> nomes) {
 		this.nomes = nomes;
 	}
@@ -31,6 +42,11 @@ public class BeanPessoa {
 
 	public String addNome() {
 		nomes.add(nome);
+		
+		if (nomes.size() > 3) {
+			commandButton.setDisabled(true);
+		}
+		
 		return "";
 	}
 	
