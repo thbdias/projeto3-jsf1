@@ -9,22 +9,17 @@
 
 <h:body>
 
-	<h1>Olá JSF</h1>
+	
 
 	<h:form id="formPessoa">
-		Nome:		
-		<h:inputText id="campoIdNome" name="campoNameNome" value="#{beanPessoa.nome}"/>
-		<h:inputSecret id="senha" value="#{beanPessoa.senha}"/>
-		<h:inputTextarea id="texto" value="#{beanPessoa.texto}"/>
-		<br/>
-				
-		<h:commandButton binding="#{beanPessoa.commandButton}" value="ADD Nome" action="#{beanPessoa.addNome}"/>
+		<h1>Olá JSF</h1>
 		
-		<h:dataTable value="#{beanPessoa.nomes}" var="nomeDT">
-			<h:column>
-				<h:outputText value="#{nomeDT}"/>
-			</h:column>
-		</h:dataTable>
+		<h:outputText value="saida de texto comum"/> <!-- Usado para mostrar -->
+		<br />
+		
+		<h:outputLabel value="Nome: " for="campoNome"/>
+		<h:inputText id="campoNome" value="#{beanPessoa.nome}"/> <!-- Usado para gravar -->
+		
 	</h:form>
 	
 </h:body>
