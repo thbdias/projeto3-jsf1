@@ -45,7 +45,7 @@ public class BeanPessoa {
 		
 		if (nomes.size() > 3) {
 			commandButton.setDisabled(true);
-			return "paginanavegada"; //navegação dinâmica
+			return "paginanavegada?faces-redirect=true"; //navegação dinâmica - redirecinamento de URL
 		}
 		
 		return ""; // null ou vazio fica na mesma página -> outcome
