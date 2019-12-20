@@ -1,30 +1,33 @@
 package br.com.cursojsf;
 
-import javax.faces.bean.ManagedBean;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@RequestScoped 
 @ManagedBean(name = "beanPessoa")
 public class BeanPessoa {
 
-	//atributos que serão recebidos da tela
-	private String nome;
-	private String sobrenome;
-	private String nomeCompleto;
+	private String nome;	
+	private List<String> nomes = new ArrayList<String>();
 	
 	
+	
+	public void setNomes(List<String> nomes) {
+		this.nomes = nomes;
+	}
+	
+	public List<String> getNomes() {
+		return nomes;
+	}
 
-	public String mostrarNome() {
-		nomeCompleto = nome + " - " + sobrenome;
+	public String addNome() {
+		nomes.add(nome);
 		return "";
 	}
 	
-	public String getNomeCompleto() {
-		return nomeCompleto;
-	}
-
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -33,12 +36,5 @@ public class BeanPessoa {
 		this.nome = nome;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
 
 }
