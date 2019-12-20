@@ -3,6 +3,7 @@ package br.com.cursojsf;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
@@ -10,7 +11,8 @@ import javax.faces.bean.ViewScoped;
 
 //@RequestScoped 
 //@ViewScoped
-@SessionScoped
+//@SessionScoped
+@ApplicationScoped
 @ManagedBean(name = "beanPessoa")
 public class BeanPessoa {
 
